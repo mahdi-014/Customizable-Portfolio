@@ -1,0 +1,239 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Profile | Admin Panel</title>
+    <meta
+      content="Admin profile page for updating public portfolio profile, contact details, and social links."
+      name="description"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/admin.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-body">
+    <div data-admin-include="../components/admin-sidebar.html"></div>
+    <main class="admin-main">
+      <div data-admin-include="../components/admin-header.html"></div>
+      <section class="admin-content">
+        <div class="admin-page-heading">
+          <div>
+            <span class="admin-badge">Profile Management</span>
+            <h1>Manage Professional Profile</h1>
+            <p>
+              Update portfolio owner’s personal information, professional
+              identity, contact details, social links, and hero statistics.
+            </p>
+          </div>
+        </div>
+        <div class="admin-profile-layout">
+          <!-- LEFT PREVIEW -->
+          <div class="admin-profile-preview-card">
+            <div class="profile-preview-image">
+              <img
+                alt="Profile Preview"
+                id="profilePreviewImage"
+                src="https://via.placeholder.com/300x300.png?text=Profile+Image"
+              />
+            </div>
+            <div class="profile-preview-content">
+              <h2 id="profilePreviewName"></h2>
+              <p id="profilePreviewTitle"></p>
+              <div class="profile-preview-tags">
+                <span>Facebook Ads</span>
+                <span>Google Ads</span>
+                <span>SEO</span>
+                <span>Lead Generation</span>
+              </div>
+              <div class="profile-preview-contact">
+                <p>
+                  <strong>Email:</strong>
+                  <span id="profilePreviewEmail">example@email.com</span>
+                </p>
+                <p>
+                  <strong>Phone:</strong>
+                  <span id="profilePreviewPhone">+880 1XXXXXXXXX</span>
+                </p>
+                <p>
+                  <strong>Location:</strong>
+                  <span id="profilePreviewLocation">Dhaka, Bangladesh</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- RIGHT FORM -->
+          <form
+            class="admin-panel-card admin-profile-form"
+            id="adminProfileForm"
+          >
+            <div class="admin-card-header">
+              <div>
+                <h3>Profile Information</h3>
+                <p>Basic identity and professional introduction</p>
+              </div>
+            </div>
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label for="profileName">Full Name</label>
+                <input
+                  id="profileName"
+                  placeholder="Enter your full name"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="profileTitle">Professional Title</label>
+                <input
+                  id="profileTitle"
+                  placeholder="Enter your professional title"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="admin-form-group full-width">
+                <label for="profileBio">Short Bio</label>
+                <textarea
+                  id="profileBio"
+                  placeholder="Tell us about yourself"
+                  required=""
+                >
+I help businesses grow online through Facebook Ads, Google Ads, SEO, lead generation, and smart digital marketing strategies.</textarea
+                >
+              </div>
+              <div class="admin-form-group">
+                <label for="profileImage">Profile Image URL</label>
+                <input
+                  id="profileImage"
+                  placeholder="https://example.com/profile.jpg"
+                  type="url"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="profileCV">CV / Resume URL</label>
+                <input
+                  id="profileCV"
+                  placeholder="https://example.com/cv.pdf"
+                  type="url"
+                />
+              </div>
+            </div>
+            <div class="admin-form-section-title">
+              <h3>Contact Information</h3>
+            </div>
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label for="profileEmail">Email Address</label>
+                <input
+                  id="profileEmail"
+                  required=""
+                  type="email"
+                  value="example@email.com"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="profilePhone">Phone Number</label>
+                <input
+                  id="profilePhone"
+                  required=""
+                  type="text"
+                  value="+880 1XXXXXXXXX"
+                />
+              </div>
+              <div class="admin-form-group full-width">
+                <label for="profileLocation">Location</label>
+                <input
+                  id="profileLocation"
+                  required=""
+                  type="text"
+                  value="Dhaka, Bangladesh"
+                />
+              </div>
+            </div>
+            <div class="admin-form-section-title">
+              <h3>Social Links</h3>
+            </div>
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label for="profileFacebook">Facebook</label>
+                <input
+                  id="profileFacebook"
+                  placeholder="https://facebook.com/username"
+                  type="url"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="profileLinkedin">LinkedIn</label>
+                <input
+                  id="profileLinkedin"
+                  placeholder="https://linkedin.com/in/username"
+                  type="url"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="profileInstagram">Instagram</label>
+                <input
+                  id="profileInstagram"
+                  placeholder="https://instagram.com/username"
+                  type="url"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="profileWhatsapp">WhatsApp Link</label>
+                <input
+                  id="profileWhatsapp"
+                  placeholder="https://wa.me/8801XXXXXXXXX"
+                  type="url"
+                />
+              </div>
+            </div>
+            <div class="admin-form-section-title">
+              <h3>Hero Statistics</h3>
+            </div>
+            <div class="admin-form-grid three-column">
+              <div class="admin-form-group">
+                <label for="profileCampaigns">Campaigns Managed</label>
+                <input id="profileCampaigns" type="number" value="50" />
+              </div>
+              <div class="admin-form-group">
+                <label for="profileClients">Happy Clients</label>
+                <input id="profileClients" type="number" value="30" />
+              </div>
+              <div class="admin-form-group">
+                <label for="profileExperience">Years Experience</label>
+                <input id="profileExperience" type="number" value="3" />
+              </div>
+            </div>
+            <div class="admin-form-actions">
+              <button
+                class="admin-btn admin-btn-outline"
+                id="resetProfileBtn"
+                type="button"
+              >
+                Reset
+              </button>
+              <button class="admin-btn admin-btn-primary" type="submit">
+                Save Profile
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div class="admin-overlay" id="adminOverlay"></div>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/initial-data.js"></script>
+    <script src="../assets/js/image-url-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js?v=1.0.3"></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Education | Admin Panel</title>
+    <meta
+      content="Admin education page for managing academic, certification, and training records."
+      name="description"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/admin.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-body">
+    <div data-admin-include="../components/admin-sidebar.html"></div>
+    <main class="admin-main">
+      <div data-admin-include="../components/admin-header.html"></div>
+      <section class="admin-content">
+        <div class="admin-page-heading">
+          <div>
+            <span class="admin-badge">Education Management</span>
+            <h1>Manage Education &amp; Certifications</h1>
+            <p>
+              Add, edit, delete, and publish academic background,
+              certifications, training courses, and education-related
+              information.
+            </p>
+          </div>
+        </div>
+        <div class="admin-management-grid">
+          <!-- EDUCATION FORM -->
+          <form class="admin-panel-card admin-crud-form" id="educationForm">
+            <div class="admin-card-header">
+              <div>
+                <h3 id="educationFormTitle">Add Education</h3>
+                <p>Fill the form to add new education information.</p>
+              </div>
+            </div>
+            <input id="educationId" type="hidden" />
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label for="educationDegree">Degree / Certificate Name</label>
+                <input
+                  id="educationDegree"
+                  placeholder="BBA in Marketing"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="educationInstitution">Institution Name</label>
+                <input
+                  id="educationInstitution"
+                  placeholder="XYZ University"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="educationYear">Year</label>
+                <input
+                  id="educationYear"
+                  placeholder="2024"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="educationResult">Result / Grade</label>
+                <input
+                  id="educationResult"
+                  placeholder="CGPA 3.50 / Completed"
+                  type="text"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="educationType">Type</label>
+                <select id="educationType" required="">
+                  <option value="">Select Type</option>
+                  <option>Academic</option>
+                  <option>Certification</option>
+                  <option>Training</option>
+                  <option>Achievement</option>
+                </select>
+              </div>
+              <div class="admin-form-group">
+                <label for="educationStatus">Status</label>
+                <select id="educationStatus" required="">
+                  <option value="Published">Published</option>
+                  <option value="Draft">Draft</option>
+                </select>
+              </div>
+              <div class="admin-form-group full-width">
+                <label for="educationDescription">Description</label>
+                <textarea
+                  id="educationDescription"
+                  placeholder="Write short description..."
+                  required=""
+                ></textarea>
+              </div>
+              <div class="admin-form-group full-width">
+                <label for="educationCertificateUrl"
+                  >Certificate / Document URL</label
+                >
+                <input
+                  id="educationCertificateUrl"
+                  placeholder="https://example.com/certificate.pdf"
+                  type="url"
+                />
+              </div>
+            </div>
+            <div class="admin-form-actions">
+              <button
+                class="admin-btn admin-btn-outline"
+                id="cancelEducationEditBtn"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button class="admin-btn admin-btn-primary" type="submit">
+                Save Education
+              </button>
+            </div>
+          </form>
+          <!-- EDUCATION LIST -->
+          <div class="admin-panel-card admin-list-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Education List</h3>
+                <p>Manage all education records from here.</p>
+              </div>
+              <button
+                class="admin-btn admin-btn-outline"
+                id="clearEducationBtn"
+                type="button"
+              >
+                Clear All
+              </button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table admin-crud-table">
+                <caption class="sr-only">
+                  Education records table
+                </caption>
+                <thead>
+                  <tr>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="educationTableBody">
+                  <!-- JS data will appear here -->
+                </tbody>
+              </table>
+            </div>
+            <div class="admin-empty-state" id="educationEmptyState">
+              <h3>No Education Added</h3>
+              <p>Add education information using the form.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="admin-overlay" id="adminOverlay"></div>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/image-url-utils.js"></script>
+    <script src="../assets/js/initial-data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js?v=1.0.3"></script>
+  </body>
+</html>

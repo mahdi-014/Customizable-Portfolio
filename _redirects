@@ -1,0 +1,16 @@
+/admin              /admin/login.html       301
+/admin/             /admin/login.html       301
+/admin/login        /admin/login.html       200
+/admin/dashboard    /admin/dashboard.html   200
+/dashboard.html     /admin/dashboard.html   301
+
+/about              /about.html             200
+/services           /services.html          200
+/projects           /projects.html          200
+/contact            /contact.html           200
+/reviews            /reviews.html           200
+/education          /education.html         200
+/experience         /experience.html        200
+/project-details    /project-details.html   200
+
+/*                  /index.html             200

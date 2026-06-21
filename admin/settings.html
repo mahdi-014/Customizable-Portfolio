@@ -1,0 +1,289 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Settings | Admin Panel</title>
+    <meta
+      content="Admin settings page for updating website branding, SEO metadata, colors, and social links."
+      name="description"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/admin.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="admin-body">
+    <div data-admin-include="../components/admin-sidebar.html"></div>
+    <main class="admin-main">
+      <div data-admin-include="../components/admin-header.html"></div>
+      <section class="admin-content">
+        <div class="admin-page-heading">
+          <div>
+            <span class="admin-badge">Website Settings</span>
+            <h1>Manage Portfolio Settings</h1>
+            <p>
+              Update website title, logo text, SEO information, theme colors,
+              footer text, and social media links.
+            </p>
+          </div>
+        </div>
+        <div class="admin-settings-layout">
+          <!-- SETTINGS PREVIEW -->
+          <div class="admin-settings-preview-card">
+            <span class="admin-badge">Live Preview</span>
+            <div class="settings-preview-logo">
+              <div class="settings-preview-icon" id="settingsPreviewLogoIcon">
+                DM
+              </div>
+              <div>
+                <h2 id="settingsPreviewTitle">Digital Marketer Portfolio</h2>
+                <p id="settingsPreviewTagline">
+                  Grow your brand with data-driven marketing.
+                </p>
+              </div>
+            </div>
+            <div class="settings-color-preview">
+              <div>
+                <span>Primary</span>
+                <strong id="settingsPreviewPrimary">#7c3cff</strong>
+              </div>
+              <div>
+                <span>Secondary</span>
+                <strong id="settingsPreviewSecondary">#00d4ff</strong>
+              </div>
+              <div>
+                <span>Accent</span>
+                <strong id="settingsPreviewAccent">#ff6b35</strong>
+              </div>
+            </div>
+            <div class="settings-preview-footer">
+              <h3>Footer Text</h3>
+              <p id="settingsPreviewFooter">
+                © 2026 Digital Marketer Portfolio. All Rights Reserved.
+              </p>
+            </div>
+            <div class="settings-preview-socials" id="settingsPreviewSocials">
+              <a href="#">Facebook</a>
+              <a href="#">LinkedIn</a>
+              <a href="#">Instagram</a>
+              <a href="#">YouTube</a>
+            </div>
+          </div>
+          <!-- SETTINGS FORM -->
+          <form
+            class="admin-panel-card admin-settings-form"
+            id="adminSettingsForm"
+          >
+            <div class="admin-card-header">
+              <div>
+                <h3>Basic Website Settings</h3>
+                <p>Update website branding and identity.</p>
+              </div>
+            </div>
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label for="settingsWebsiteTitle">Website Title</label>
+                <input
+                  id="settingsWebsiteTitle"
+                  required=""
+                  type="text"
+                  value="Digital Marketer Portfolio"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="settingsLogoText">Logo Text</label>
+                <input
+                  id="settingsLogoText"
+                  maxlength="6"
+                  required=""
+                  type="text"
+                  value="DM"
+                />
+              </div>
+              <div class="admin-form-group full-width">
+                <label for="settingsTagline">Website Tagline</label>
+                <input
+                  id="settingsTagline"
+                  required=""
+                  type="text"
+                  value="Grow your brand with data-driven marketing."
+                />
+              </div>
+              <div class="admin-form-group full-width">
+                <label for="settingsFooterText">Footer Text</label>
+                <input
+                  id="settingsFooterText"
+                  required=""
+                  type="text"
+                  value="© 2026 Digital Marketer Portfolio. All Rights Reserved."
+                />
+              </div>
+            </div>
+            <div class="admin-form-section-title">
+              <h3>SEO Settings</h3>
+            </div>
+            <div class="admin-form-grid">
+              <div class="admin-form-group full-width">
+                <label for="settingsSeoTitle">SEO Title</label>
+                <input
+                  id="settingsSeoTitle"
+                  type="text"
+                  value="Digital Marketer Portfolio | Facebook Ads, SEO &amp; Lead Generation"
+                />
+              </div>
+              <div class="admin-form-group full-width">
+                <label for="settingsSeoDescription">SEO Description</label>
+                <textarea id="settingsSeoDescription">
+Professional digital marketer portfolio showcasing Facebook Ads, Google Ads, SEO, lead generation, social media marketing, projects, and client reviews.</textarea
+                >
+              </div>
+              <div class="admin-form-group full-width">
+                <label for="settingsSeoKeywords">SEO Keywords</label>
+                <input
+                  id="settingsSeoKeywords"
+                  type="text"
+                  value="Digital Marketer, Facebook Ads, Google Ads, SEO, Lead Generation, Social Media Marketing"
+                />
+                <small class="admin-help-text"
+                  >Write keywords separated by comma.</small
+                >
+              </div>
+            </div>
+            <div class="admin-form-section-title">
+              <h3>Theme Colors</h3>
+            </div>
+            <div class="admin-color-grid">
+              <div class="admin-color-field">
+                <label for="settingsPrimaryColor">Primary Color</label>
+                <div>
+                  <input
+                    id="settingsPrimaryColor"
+                    type="color"
+                    value="#7c3cff"
+                  />
+                  <input
+                    aria-label="Primary color HEX value"
+                    id="settingsPrimaryColorText"
+                    type="text"
+                    value="#7c3cff"
+                  />
+                </div>
+              </div>
+              <div class="admin-color-field">
+                <label for="settingsSecondaryColor">Secondary Color</label>
+                <div>
+                  <input
+                    id="settingsSecondaryColor"
+                    type="color"
+                    value="#00d4ff"
+                  />
+                  <input
+                    aria-label="Secondary color HEX value"
+                    id="settingsSecondaryColorText"
+                    type="text"
+                    value="#00d4ff"
+                  />
+                </div>
+              </div>
+              <div class="admin-color-field">
+                <label for="settingsAccentColor">Accent Color</label>
+                <div>
+                  <input
+                    id="settingsAccentColor"
+                    type="color"
+                    value="#ff6b35"
+                  />
+                  <input
+                    aria-label="Accent color HEX value"
+                    id="settingsAccentColorText"
+                    type="text"
+                    value="#ff6b35"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="admin-form-section-title">
+              <h3>Social Links</h3>
+            </div>
+            <div class="admin-form-grid">
+              <div class="admin-form-group">
+                <label for="settingsFacebook">Facebook</label>
+                <input
+                  id="settingsFacebook"
+                  placeholder="https://facebook.com/username"
+                  type="url"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="settingsLinkedin">LinkedIn</label>
+                <input
+                  id="settingsLinkedin"
+                  placeholder="https://linkedin.com/in/username"
+                  type="url"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="settingsInstagram">Instagram</label>
+                <input
+                  id="settingsInstagram"
+                  placeholder="https://instagram.com/username"
+                  type="url"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="settingsYoutube">YouTube</label>
+                <input
+                  id="settingsYoutube"
+                  placeholder="https://youtube.com/@username"
+                  type="url"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="settingsWhatsapp">WhatsApp</label>
+                <input
+                  id="settingsWhatsapp"
+                  placeholder="https://wa.me/8801XXXXXXXXX"
+                  type="url"
+                />
+              </div>
+              <div class="admin-form-group">
+                <label for="settingsWebsite">Website</label>
+                <input
+                  id="settingsWebsite"
+                  placeholder="https://example.com"
+                  type="url"
+                />
+              </div>
+            </div>
+            <div class="admin-form-actions">
+              <button
+                class="admin-btn admin-btn-outline"
+                id="resetSettingsBtn"
+                type="button"
+              >
+                Reset Settings
+              </button>
+              <button class="admin-btn admin-btn-primary" type="submit">
+                Save Settings
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div class="admin-overlay" id="adminOverlay"></div>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/initial-data.js"></script>
+    <script src="../assets/js/image-url-utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/admin.js?v=1.0.3"></script>
+  </body>
+</html>
